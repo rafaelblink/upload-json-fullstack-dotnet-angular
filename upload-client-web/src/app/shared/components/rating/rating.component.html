@@ -1,0 +1,7 @@
+<div class="wrapper-rating">
+  <div *ngIf="amount; then hasRating else noRating"></div>
+  <ng-template #hasRating>
+    <i *ngFor="let number of getNumber()" class="fa fa-star has-text-danger" aria-hidden="true"></i>
+  </ng-template>
+  <ng-template #noRating> - </ng-template>
+</div>

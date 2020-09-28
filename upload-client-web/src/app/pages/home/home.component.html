@@ -1,0 +1,58 @@
+<div class="container mt-3">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <div class="notification">
+        This is my software <strong>presentation</strong>, I'll fill this part with some lorem ipsum :), Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quibusdam quo eaque in necessitatibus vitae itaque autem error deleniti obcaecati ducimus optio doloribus dolore at ab impedit repellendus omnis, magnam porro, debitis est aperiam. Tenetur dolorum doloribus consequuntur magnam vel omnis? Ipsum necessitatibus reiciendis sequi, assumenda aliquid perferendis provident in.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+        <app-file-upload (sendFileEvent)="sendFile($event)"></app-file-upload>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>Created</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.title }}</td>
+            <td>{{ product.type | productTypePipe }}</td>
+            <td>
+              <app-rating [amount]="product.rating"></app-rating>
+            </td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.createdAt | date: 'dd/MM/yyyy' }}</td>
+            <td>
+              <div class="buttons are-small is-centered">
+                <a class="button is-dark" [routerLink]="['product/edit', product.id]">
+                  <i class="fas fa-edit mr-2"></i> Edit
+                </a>
+                <button class="button is-danger" (click)="removeItem(product.id)">
+                  <i class="fas fa-trash-alt mr-2"></i> Remove
+                </button>
+              </div>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

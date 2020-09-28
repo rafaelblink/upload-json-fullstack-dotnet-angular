@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "upload-api", "upload-api\upload-api.csproj", "{E3263D77-8707-4A67-A421-3C5CAC627D0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "upload-core", "upload-core\upload-core.csproj", "{94447264-DE2A-44F2-833C-98FDA765453C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3263D77-8707-4A67-A421-3C5CAC627D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3263D77-8707-4A67-A421-3C5CAC627D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3263D77-8707-4A67-A421-3C5CAC627D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3263D77-8707-4A67-A421-3C5CAC627D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94447264-DE2A-44F2-833C-98FDA765453C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94447264-DE2A-44F2-833C-98FDA765453C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94447264-DE2A-44F2-833C-98FDA765453C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94447264-DE2A-44F2-833C-98FDA765453C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

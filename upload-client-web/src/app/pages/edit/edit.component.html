@@ -1,0 +1,98 @@
+<div class="container mt-3">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <form class="columns is-multiline" [formGroup]="formProduct" (ngSubmit)="onSubmit()">
+        <div class="column is-half">
+          <div class="field">
+            <label for="title" class="label">Title</label>
+            <div class="control">
+              <input maxlength="100" formControlName="title" id="title" name="title" class="input" type="text"
+                placeholder="Title">
+            </div>
+            <app-error-input [property]="formProduct.get('title')"></app-error-input>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="field">
+            <label for="description" class="label">Description</label>
+            <div class="control">
+              <input maxlength="500" formControlName="description" name="description" id="description" class="input" type="text"
+                placeholder="Description">
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">Type</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select formControlName="type">
+                  <option value="" disabled>Select the type</option>
+                  <option *ngFor="let product of getAllProductTypes()" [value]="product">{{ product | productTypePipe }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">Rating</label>
+            <div class="control">
+              <input formControlName="rating" name="rating" min="0" max="100" class="input" type="number"
+                placeholder="Rating">
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">Price</label>
+            <div class="control">
+              <input currencyMask [options]="optionsCurrency" formControlName="price" name="price" class="input"
+                type="text" placeholder="Price">
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">FileName</label>
+            <div class="control">
+              <input maxlength="100" formControlName="fileName" name="fileName" class="input" type="text"
+                placeholder="Filename">
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">Height</label>
+            <div class="control">
+              <input maxlength="4" [pattern]="'^[0-9]*$'" formControlName="height" name="height" class="input"
+                type="text" placeholder="Filename">
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">Width</label>
+            <div class="control">
+              <input maxlength="4" [pattern]="'^[0-9]*$'" formControlName="width" name="width" class="input" type="text"
+                placeholder="Filename">
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="field is-grouped">
+            <div class="control">
+              <a [routerLink]="['/']" class="button"><i class="fas fa-undo mr-2"></i> Cancel</a>
+            </div>
+            <div class="control">
+              <button type="submit" [disabled]="formProduct.invalid" class="button is-dark">
+                <i class="fas fa-save mr-2"></i> Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
